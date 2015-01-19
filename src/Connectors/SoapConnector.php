@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kasper
- * Date: 1/18/15
- * Time: 10:01 AM
- */
 
 namespace Opilo\RahyabClient\Connectors;
 
