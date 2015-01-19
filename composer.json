@@ -1,0 +1,23 @@
+{
+  "name": "opilo/rahyab-client",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "SAli Mousavi",
+      "email": "set.ali.mousavi@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0"
+  },
+
+
+
+  "autoload": {
+    "psr-4": {
+      "Opilo\\RahyabClient\\": "src/"
+    }
+  },
+
+  "minimum-stability": "dev"
+}
