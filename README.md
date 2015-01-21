@@ -11,6 +11,10 @@ example: <code> $cm = new ClientManager('soap', 'your username', 'your password'
 <h3> Functions </h3>
 
 Send SMS: <br> <code> $cm->->getConnector()->sendSms('50001********', ['9*********','9*********'], 'Test Message', "encoding");</code>
+<table>
+<tr> Input </tr>
+<tr> <th> Your Number </th> String <th> </th> <th> explain </th> </tr>
+</table>
 
 Get Credit: <code> $cm->getConnector()->getCredit() </code>
 
