@@ -7,9 +7,7 @@ use Opilo\RahyabClient\Exceptions\RahyabSoapException;
 
 class SoapConnector implements  ConnectorInterface {
 
-    const WSDL = 'http://79.175.169.230:8020/WebService/sms.asmx?WSDL';
 
-    const TIME_OUT = 120;
 
     /**
      * @var
@@ -28,50 +26,18 @@ class SoapConnector implements  ConnectorInterface {
 
 
     /**
-     * @param $wsdl
      * @param $username
      * @param $password
+     * @param \SoapClient $soapClient
      */
-    public function __construct($username, $password)
+    public function __construct($username, $password, $soapClient)
     {
         $this->username = $username;
 
         $this->password = $password;
+
+        $this->soapClient = $soapClient;
     }
-
-
-    /**
-     * Create a new Soap instance
-     *
-     * @throws RahyabSoapException
-     * @return object
-     */
-    public function connect()
-    {
-        if (!isset($this->soapClient)) {
-
-            try
-            {
-                $params = array(
-                    'trace' => true,
-                    'exceptions' => true,
-                    'compression' => SOAP_COMPRESSION_ACCEPT,
-                    'connection_timeout' => self::TIME_OUT,
-                    'cache_wsdl' => WSDL_CACHE_BOTH,
-                );
-                $this->soapClient = new \SoapClient(self::WSDL, $params);
-
-
-            } catch (\SoapFault $e)
-            {
-                throw new SoapConnectionException('Invalid or unknown status');
-            }
-        }
-
-        return $this->soapClient;
-    }
-
-
 
     /**
      * Send SMS from given sources to destinations
@@ -92,15 +58,14 @@ class SoapConnector implements  ConnectorInterface {
                 $parameters['uCellphones'] = implode(';', $destinations);
                 $parameters['uMessage'] = $message;
                 $parameters['uFarsi'] = $encoding;
-                $parameters['uTopic'] = "false";
-                $parameters['uFlash'] = "false";
+                $parameters['uTopic'] = false;
+                $parameters['uFlash'] = false;
 
-                $response=$this->connect()->doSendSMS($parameters);
+                $response=$this->soapClient->doSendSMS($parameters);
                 return $response->doSendSMSResult;
 
         } catch (\SoapFault $e)
         {
-//            var_dump('error');
             throw new SoapConnectionException('Invalid or unknown status');
         }
     }
@@ -112,7 +77,7 @@ class SoapConnector implements  ConnectorInterface {
      */
     public function getCredit()
     {
-        $response = $this->connect()->doGetInfo(
+        $response = $this->soapClient->doGetInfo(
             [
                 'uUsername' => $this->username,
                 'uPassword' => $this->password
@@ -131,7 +96,7 @@ class SoapConnector implements  ConnectorInterface {
      */
     public function getMessagesStatus($messageIds)
     {
-        $response = $this->connect()->doGetDelivery(
+        $response = $this->soapClient->doGetDelivery(
             [
                 'uUsername' => $this->username,
                 'uReturnIDs'=> implode(';', $messageIds)
@@ -149,7 +114,7 @@ class SoapConnector implements  ConnectorInterface {
      */
     public function getMessages($lastRowId)
     {
-        $response = $this->connect()->doReceiveSMS(
+        $response = $this->soapClient->doReceiveSMSArray(
             [
                 'uUsername' => $this->username,
                 'uPassword' => $this->password,
@@ -157,7 +122,7 @@ class SoapConnector implements  ConnectorInterface {
             ]
         );
 
-        return $response->doReceiveSMSResult;
+        return $response->doReceiveSMSArrayResult;
     }
 
 

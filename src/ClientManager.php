@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kasper
- * Date: 1/18/15
- * Time: 9:54 AM
- */
+
 
 namespace Opilo\RahyabClient;
 
@@ -63,7 +58,7 @@ class ClientManager {
 
             $connectorClass = __NAMESPACE__ . '\\Connectors\\' . ucfirst($this->connectionType) . 'Connector';
 
-            $this->connector = new $connectorClass($this->username, $this->password);
+            $this->connector = new $connectorClass($this->username, $this->password, ClientFactory::getRahyabSoapClient());
         }
 
         return $this->connector;

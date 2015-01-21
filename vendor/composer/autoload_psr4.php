@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Opilo\\RahyabClient\\' => array($baseDir . '/src'),
+    'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
 );
