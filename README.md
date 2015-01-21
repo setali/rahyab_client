@@ -32,7 +32,7 @@ Ex. <code> $cm = new ClientManager('soap', 'your username', 'your password'); </
  
  <table>
  <tr> <th> Prameter </th>  <th>  Type</th> <th> explain </th> <th> example </th>  </tr>
- <tr> <td> $lastRowMessageId </td> <td> long </td> <td> Last Row Message ID </td> <td> 1946663772 </td> </tr>
+ <tr> <td> $lastRowMessageId </td> <td> Long </td> <td> Last Row Message ID </td> <td> 1946663772 </td> </tr>
 
  </table>
 
