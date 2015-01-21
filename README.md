@@ -10,7 +10,7 @@ example: <code> $cm = new ClientManager('soap', 'your username', 'your password'
 
 <h3> Functions </h3>
 
-Send SMS: <code> $cm->->getConnector()->sendSms('50001********', ['9*********','9*********'], 'Test Message', "encoding");</code>
+Send SMS: <br> <code> $cm->->getConnector()->sendSms('50001********', ['9*********','9*********'], 'Test Message', "encoding");</code>
 
 Get Credit: <code> $cm->getConnector()->getCredit() </code>
 
