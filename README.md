@@ -7,8 +7,8 @@ Download this package and add in your project.
 <h3> How to work? </h3>
 include "src/ClientManager" then  create a new ClientManager().<br>
 Ex. <code> $cm = new ClientManager('soap', 'your username', 'your password'); </code>
-
-<h3> Functions </h3><br><br>
+<br>
+<h3> Functions </h3><br>
 
 <b>Send SMS:</b> <br><br> Ex. <code> $cm->->getConnector()->sendSms($sender, $receivers , $message, $encoding);</code>
 <table>
