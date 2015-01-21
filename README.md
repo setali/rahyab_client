@@ -10,11 +10,12 @@ example: <code> $cm = new ClientManager('soap', 'your username', 'your password'
 
 <h3> Functions </h3>
 
-Send SMS: <br> <code> $cm->->getConnector()->sendSms('50001********', ['9*********','9*********'], 'Test Message', "encoding");</code>
+Send SMS: <br> <code> $cm->->getConnector()->sendSms($sender, $receivers , 'Test Message', "encoding");</code>
 <table>
 <tr> Input: </tr>
-<tr> <th> Prameter </th>  <th>  Type</th> <th> explain </th> </tr>
-<tr> <td> Sender Number </td> <td> String </td> <td> '50001' </td> </tr>
+<tr> <th> Prameter </th>  <th>  Type</th> <th> explain </th> <th> example </th>  </tr>
+<tr> <td> $sender </td> <td> String </td> <td> Sender Number </td> <td> '50001' </td> </tr>
+<tr> <td> $receivers </td> <td> Array Strings </td> <td> Receivers Number </td> <td> ['9*********','9*********'] </td> </tr>
 </table>
 
 <table>
