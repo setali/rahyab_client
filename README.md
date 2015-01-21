@@ -30,7 +30,7 @@ Get Message:
  <code> $cm->getConnector()->getMessages("Last row messages ID ") </code>
 
 Get Message Status:
-  <br> ex: 
+  <br> ex:
  <code> $cm->getConnector()->getMessagesStatus("Array of Message IDs ") </code>
 
 
