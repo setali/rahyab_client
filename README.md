@@ -6,11 +6,11 @@ Download this package and add in your project.
 
 <h3> How to work? </h3>
 include "src/ClientManager" then  create a new ClientManager().<br>
-Ex: <code> $cm = new ClientManager('soap', 'your username', 'your password'); </code>
+Ex. <code> $cm = new ClientManager('soap', 'your username', 'your password'); </code>
 
 <h3> Functions </h3>
 
-Send SMS: <br> Ex: <code> $cm->->getConnector()->sendSms($sender, $receivers , $message, $encoding);</code>
+Send SMS: <br> Ex. <code> $cm->->getConnector()->sendSms($sender, $receivers , $message, $encoding);</code>
 <table>
 <tr> Input: </tr>
 <tr> <th> Prameter </th>  <th>  Type</th> <th> explain </th> <th> example </th>  </tr>
@@ -22,15 +22,15 @@ Send SMS: <br> Ex: <code> $cm->->getConnector()->sendSms($sender, $receivers , $
 
 
 Get Credit:
- <br> Ex: 
+ <br> Ex.
  <code> $cm->getConnector()->getCredit() </code>
 
 Get Message:
-  <br> Ex: 
+  <br> Ex.
  <code> $cm->getConnector()->getMessages("Last row messages ID ") </code>
 
 Get Message Status:
-  <br> Ex:
+  <br> Ex.
  <code> $cm->getConnector()->getMessagesStatus("Array of Message IDs ") </code>
 
 
