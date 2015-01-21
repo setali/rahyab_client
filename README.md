@@ -16,6 +16,10 @@ Send SMS: <br> <code> $cm->->getConnector()->sendSms('50001********', ['9*******
 <tr> <th> Your Number </th>  <th>  String</th> <th> explain </th> </tr>
 </table>
 
+<table>
+<tr> Input </tr>
+<tr> <th> Your Number </th>  <th>  String</th> <th> explain </th> </tr>
+</table>
 Get Credit: <code> $cm->getConnector()->getCredit() </code>
 
 Get Message: <code> $cm->getConnector()->getMessages("Last row messages ID ") </code>
