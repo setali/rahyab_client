@@ -12,19 +12,15 @@ example: <code> $cm = new ClientManager('soap', 'your username', 'your password'
 
 Send SMS: <br> <code> $cm->->getConnector()->sendSms('50001********', ['9*********','9*********'], 'Test Message', "encoding");</code>
 <table>
-<table>
-<tr>
-<td>
-<tr> Input </tr>
-<tr> <th> Your Number </th>  <th>  String</th> <th> explain </th> </tr>
+<tr> Input: </tr>
+<tr> <th> Prameter </th>  <th>  Type</th> <th> explain </th> </tr>
+<tr> <td> Sender Number </td> <td> String </td> <td> '50001' </td> </tr>
 </table>
-</td>
-<td>>
 
 <table>
 <tr> Input </tr>
 <tr> <th> Your Number </th>  <th>  String</th> <th> explain </th> </tr>
-</table></td></tr></table>
+</table>
 Get Credit: <code> $cm->getConnector()->getCredit() </code>
 
 Get Message: <code> $cm->getConnector()->getMessages("Last row messages ID ") </code>
