@@ -8,9 +8,9 @@ Download this package and add in your project.
 include "src/ClientManager" then  create a new ClientManager().<br>
 Ex. <code> $cm = new ClientManager('soap', 'your username', 'your password'); </code>
 
-<h3> Functions </h3>
+<h3> Functions </h3><br><br>
 
-<b>Send SMS</b>: <br><br> Ex. <code> $cm->->getConnector()->sendSms($sender, $receivers , $message, $encoding);</code>
+<b>Send SMS:</b> <br><br> Ex. <code> $cm->->getConnector()->sendSms($sender, $receivers , $message, $encoding);</code>
 <table>
 <tr> <th> Prameter </th>  <th>  Type</th> <th> explain </th> <th> example </th>  </tr>
 <tr> <td> $sender </td> <td> String </td> <td> Sender Number </td> <td> '50001' </td> </tr>
@@ -20,18 +20,30 @@ Ex. <code> $cm = new ClientManager('soap', 'your username', 'your password'); </
 </table>
 
 
-Get Credit:
+<b>Get Credit:</b>
  <br> Ex.
  <code> $cm->getConnector()->getCredit() </code>
+ 
+ - This function don`t have input;
 
-Get Message:
+<b>Get Message:</b>
   <br> Ex.
- <code> $cm->getConnector()->getMessages("Last row messages ID ") </code>
+ <code> $cm->getConnector()->getMessages($lastRowMessageId) </code>
+ 
+ <table>
+ <tr> <th> Prameter </th>  <th>  Type</th> <th> explain </th> <th> example </th>  </tr>
+ <tr> <td> $lastRowMessageId </td> <td> long </td> <td> Last Row Message ID </td> <td> 1946663772 </td> </tr>
 
-Get Message Status:
+ </table>
+
+<b>Get Message Status:</b>
   <br> Ex.
- <code> $cm->getConnector()->getMessagesStatus("Array of Message IDs ") </code>
+ <code> $cm->getConnector()->getMessagesStatus($messageIDs) </code>
+<table>
+ <tr> <th> Prameter </th>  <th>  Type</th> <th> explain </th> <th> example </th>  </tr>
+ <tr> <td> $messageIDs </td> <td> Array Strings </td> <td> Message Id that want status </td> <td> ['1948512018','1948512019'] </td> </tr>
 
+ </table>
 
 <br>
-Example file: src/incex.php
+Example file: src/index.php
