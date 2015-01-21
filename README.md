@@ -1,4 +1,4 @@
-# rahyab_client
+# RahyabClient
 
 <h3> Installation </h3>
 
